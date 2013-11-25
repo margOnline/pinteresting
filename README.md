@@ -8,12 +8,12 @@ Rails project following the one month rails tutorial to deepen understanding of 
 <li>Users can upload photos.</li> 
 <li>Responsive/li> 
 
-<h3>Technical Configuration<h3>
+<h3>Technical Configuration</h3>
 <ul>
 <li>Database - SQLite</li>
 <li>Gems
   <ul>
-  <li>Bootstrap</li>
+  <li>Bootstrap-sass</li>
   <li>Devise</li>
   <li>Paperclip</li>
   </ul>
