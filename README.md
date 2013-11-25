@@ -6,7 +6,8 @@ Rails project following the one month rails tutorial to deepen understanding of 
 <li>Create a pinterest type application.</li> 
 <li>Users can sign in/out/up.</li> 
 <li>Users can upload photos.</li> 
-<li>Responsive/li> 
+<li>Responsive</li> 
+</ul>
 
 <h3>Technical Configuration</h3>
 <ul>
