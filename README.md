@@ -1,6 +1,6 @@
 This application is written in Ruby 2.0 using Rails 4 framework.
 <h3>Objective</h3>
-Rails project following the one month rails tutorial to deepen understanding of rails and use new libraries e.g. paperclip
+Rails project following the one month rails tutorial to deepen understanding of rails and revisit Devise and Paperclip gems as well as use Boostrap-sass.
 <h3>Requirements</h3>
 <ul>
 <li>Create a pinterest type application.</li> 
@@ -11,7 +11,7 @@ Rails project following the one month rails tutorial to deepen understanding of 
 
 <h3>Technical Configuration</h3>
 <ul>
-<li>Database - SQLite</li>
+<li>Database - Postgresql</li>
 <li>Gems
   <ul>
   <li>Bootstrap-sass</li>
