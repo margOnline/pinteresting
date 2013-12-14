@@ -7,15 +7,13 @@ class PinsController < ApplicationController
   end
 
   def show
-    
   end
 
   def new
     @pin = Pin.new
   end
 
-  def edit
-    
+  def edit 
   end
 
   def create
