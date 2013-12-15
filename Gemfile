@@ -40,6 +40,10 @@ gem 'aws-sdk', '~> 1.30'
 
 gem 'masonry-rails', '~> 0.2.1'
 
+gem 'will_paginate', '~> 3.0.5'
+
+gem 'will_paginate-bootstrap', '1.0.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

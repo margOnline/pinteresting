@@ -4,7 +4,7 @@ class PinsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @pins = Pin.all
+    @pins = Pin.order(created_at: :desc).paginate(:page => params[:page], :per_page => 8)
   end
 
   def show
