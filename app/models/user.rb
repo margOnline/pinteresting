@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
 
   has_many :pins
   has_many :likes
+  has_many :liked_pins, through: :likes, source: :pin
 
   validates :name, presence: true
+
+  def has_liked?(pin)
+    self.liked_pins.include?(pin)
+  end
 end
