@@ -1,20 +1,24 @@
 = render 'pages/home' unless user_signed_in? 
-  #pins{class: "transitions-enabled"}
-   @pins.each do |pin| 
+%div{id: "pins", class: "transitions-enabled"}
+  - @pins.each do |pin| 
     %div{class: "box panel panel-default"}
       = link_to image_tag(pin.image.url(:medium)), pin 
       %div{class: "panel-body"}
         = pin.description 
         %br 
         %strong
-          = pin.user.name if pin.user 
+          = pin.user.name if pin.user
+          - if pin.user != current_user
+            %span{class: "fa fa-heart-o"}
+              Like
         - if pin.user == current_user 
           %div{class: "actions"}
             = link_to edit_pin_path(pin) do 
-              %span{class: "glyphicon glyphicon-edit"} Edit
+              %span{class: "fa fa-edit"} 
+                Edit
             = link_to pin, method: :delete, data: {confirm: 'Are you sure'} do 
-              %span{class: "glyphicon glyphicon-trash"} Delete
-
+              %span{class: "fa fa-trash"}
+                Delete
 
 %div{class: "center"}
   = will_paginate @pins, renderer: BootstrapPagination::Rails
