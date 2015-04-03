@@ -5,47 +5,32 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use postgres as the database for Active Record
 gem 'pg'
-
-# required for Heroku
 gem 'rails_12factor'
 
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'jquery-turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
 gem 'bootstrap-sass', '~> 3.0.3.0'
-
 gem 'devise', '~> 3.1.1'
-
 gem 'paperclip', '~> 3.0'
-
 gem 'aws-sdk', '~> 1.30'
-
 gem 'masonry-rails', '~> 0.2.1'
-
 gem 'will_paginate', '~> 3.0.5'
-
 gem 'will_paginate-bootstrap', '1.0.0'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem "fuubar"
+  gem 'pry-rails'
+  gem 'rspec-rails', '~>3.0.0'
+  gem 'shoulda-matchers', require: false
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
