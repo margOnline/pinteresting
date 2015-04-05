@@ -25,12 +25,15 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap', '1.0.0'
 
 group :development, :test do
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'connection_pool', '2.0.0'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem "fuubar"
   gem 'pry-rails'
   gem 'rspec-rails', '~>3.0.0'
   gem 'shoulda-matchers', require: false
+
 end
 
 group :doc do
