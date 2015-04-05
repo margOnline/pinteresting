@@ -11,7 +11,7 @@ class LikesController < ApplicationController
       like = @pin.likes.create
       like.user_id = current_user.id
       like.save!
-      redirect_to pins_path 
+      render json: {new_likes_count: @pin.likes.count}
     end
   end
 

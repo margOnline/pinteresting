@@ -5,14 +5,13 @@
       = link_to image_tag(pin.image.url(:medium)), pin 
       %div{class: "panel-body"}
         = pin.description 
-        - if pin.likes.size > 0
-          %span{class: "pin-like fa fa-heart-o"}
-            = pin.likes.size
+        %span{class: "likes-count fa fa-heart-o"}
+          = pin.likes.size
         %br 
         %strong
           = pin.user.name if pin.user
-          - if pin.user != current_user
-            = link_to "like", pin_likes_url(pin.id), method: :post,class: 'like-pin'
+          - if current_user && pin.user != current_user
+            = link_to "like", pin_likes_url(pin.id), method: :post, class: 'like-pin', remote: true
         - if pin.user == current_user 
           %div{class: "actions"}
             = link_to edit_pin_path(pin) do 
