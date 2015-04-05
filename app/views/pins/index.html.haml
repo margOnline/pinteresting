@@ -1,4 +1,9 @@
-= render 'pages/home' unless user_signed_in? 
+= render 'pages/home' unless user_signed_in?
+%div
+  %h3 Tags 
+  - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| 
+    = link_to tag.name, tag_path(tag), class: css_class 
+
 %div{id: "pins", class: "transitions-enabled"}
   - @pins.each do |pin| 
     %div{class: "box panel panel-default"}
@@ -20,6 +25,10 @@
             = link_to pin, method: :delete, data: {confirm: 'Are you sure'} do 
               %span{class: "fa fa-trash"}
                 Delete
+        - if pin.tag_list.count > 0
+          %p 
+            tags: 
+            = pin.tag_list
 
 %div{class: "center"}
   = will_paginate @pins, renderer: BootstrapPagination::Rails
