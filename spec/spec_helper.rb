@@ -5,17 +5,8 @@ end
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
-require 'rspec/rails'
-require 'shoulda/matchers'
-require 'capybara/poltergeist'
-require 'capybara-screenshot/rspec'
 require 'shoulda/matchers'
 require "paperclip/matchers"
-
-Capybara.javascript_driver = :poltergeist
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, {js_errors: false})
-end
 
 ActiveRecord::Migration.maintain_test_schema! if defined?(ActiveRecord::Migration)
 

@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.1.8'
 gem 'pg'
 
 gem 'aws-sdk', '~> 1.30'
@@ -16,7 +16,7 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'masonry-rails', '~> 0.2.1'
-gem 'paperclip', '~> 3.0'
+gem 'paperclip', '~> 4.2'
 gem 'rails_12factor'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
@@ -31,7 +31,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem "fuubar"
   gem 'pry-rails'
-  gem 'rspec-rails', '~>3.0.0'
+  gem "rspec-rails", require: "rspec/rails"
   gem 'shoulda-matchers', require: false
 
 end
