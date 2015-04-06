@@ -3,6 +3,7 @@ class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  
   def index
     @pins = Pin.order(created_at: :desc).paginate(:page => params[:page], :per_page => 8)
     @tags = Pin.tag_counts
@@ -20,6 +21,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
+    @pin.tag_list.add(params[:tag_list])
     if @pin.save
         redirect_to @pin, notice: 'Pin was sucessfully created.'
     else
@@ -28,6 +30,7 @@ class PinsController < ApplicationController
   end
 
   def update
+    @pin.tag_list.add(params[:tag_list])
     if @pin.update(pin_params)
       redirect_to @pin, notice: 'Pin was sucessfully updated.'
     else
@@ -52,7 +55,15 @@ class PinsController < ApplicationController
   end
   
   def pin_params
-    params.require(:pin).permit(:description, :image, :tag_list => [])    
-  end  
+    params.require(:pin).permit(:description, :image, :tag_list)    
+  end
+
+  def tagged
+    if params[:tag].present? 
+      @pins = Pin.tagged_with(params[:tag])
+    else 
+      @pins = Pin.all
+    end  
+  end
 
 end
