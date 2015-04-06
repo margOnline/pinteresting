@@ -1,0 +1,14 @@
+%div
+  = link_to ' Back', pins_path, class: "fa fa-arrow-left"
+  %h3
+    Pins tagged with
+    = @tag.name
+
+%div{id: "pins", class: "transitions-enabled"}
+  - if @pins.count > 0 
+    - @pins.each do |pin| 
+      = render partial: 'pins/pin', locals: { pin: pin } 
+        
+  - else
+    %p
+      This tag is not associated with any pins.
